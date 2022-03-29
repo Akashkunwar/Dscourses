@@ -1,0 +1,360 @@
+
+   _______________   LOOPING SOLUTION USING PYTHON __________________
+
+1.) Write a code get an integer number as input and print the sum of the digits.
+
+Input Description:
+A single line containing an integer.
+
+Output Description:
+Print the sum of the digits of the integer.
+
+Sample Input :
+124
+Sample Output :
+7
+____________________
+
+a = int(input())
+b = str(a)
+c = []
+for x in b:
+  c.append(x)
+d = map(int,c)
+d = list(d)
+print(sum(d))
+_________________________________________________________
+
+2.) Write a code to get the input and print it 5 times.
+
+Input Description:
+A single line contains an integer N.
+
+Output Description:
+Output contains 5 lines with each line having the value N.
+
+Sample Input :
+4
+Sample Output :
+4
+4
+4
+4
+4
+____________________
+
+n = int(input())
+print(n)
+print(n)
+print(n)
+print(n)
+print(n)
+___________________________________________________________
+
+3.) Write a code to get 2 integers A and N. Print the integer A, N times in separate line.
+
+Input Description:
+First line contains an integer A. Second line contains an Integer N.
+
+Output Description:
+Print the integer A, N times in a separate line.
+
+Sample Input :
+2 3
+Sample Output :
+2
+2
+2
+_____________________
+
+m, n = map(int, input().split())
+for line in range(n):
+  print(m)
+_____________________________________________________________
+
+4.) Write a code to get 2 integers as input and find the HCF of the 2 integer without using recursion or Euclidean algorithm.
+
+Input Description:
+A single line containing 2 integers separated by space.
+
+Output Description:
+Print the HCF of the integers.
+
+Sample Input :
+2 3
+Sample Output :
+1
+__________________________
+
+a,b = map(int, input().split(" "))
+import numpy as np
+c = np.gcd(a,b)
+print(c)
+____________________________________________________________
+
+5.) Write a program to get a string as input and reverse the string without using temporary variable.
+
+Input Description:
+A single line containing a string.
+
+Output Description:
+Print the reversed string.
+
+Sample Input :
+GUVI
+Sample Output :
+IVUG
+__________________________
+
+a = input()[::-1]
+print(a)
+_______________________________________________________________________
+
+6.) Write a code to get 2 integers as input and add the integers without any carry.
+
+Input Description:
+A single line containing 2 integers.
+
+Output Description:
+Print sum of the 2 integers without carry
+
+Sample Input :
+44 66
+Sample Output :
+0
+___________________________
+
+import math
+def xSum(n, m) :
+	res = 0
+	multiplier = 1
+	bit_sum = 0
+	while (n or m) :
+		bit_sum = ((n % 10) +
+				(m % 10))
+		bit_sum = bit_sum % 10
+		res = (bit_sum *
+			multiplier) + res
+		n = math.floor(n / 10)
+		m = math.floor(m / 10)
+		multiplier = multiplier * 10
+	return res
+n,m = map(int, input().split(" "))
+print (xSum(n, m))
+_______________________________________________________________________
+
+7.) Write a code to get an integer N and print the digits of the integer.
+
+Input Description:
+A single line contains an integer N.
+
+Output Description:
+Print the digits of the integer in a single line separated by space,
+
+Sample Input :
+348
+Sample Output :
+3 4 8
+______________________________
+
+a = int(input())
+b = str(a)
+c = []
+for x in b:
+  c.append(x)
+d = map(int,c)
+d = list(d)
+e = ''.join(str(d).split(","))
+res = str(e)[1:-1]
+print(res)
+________________________________________________________________________
+
+8.) Write a code to get an integer N and print the even values from 1 till N in a separate line.
+
+Input Description:
+A single line contains an integer N.
+
+Output Description:
+Print the even values from 1 to N in a separate line.
+
+Sample Input :
+6
+Sample Output :
+2
+4
+6
+_______________________________
+
+n=int(input())
+m = n+1
+for x in range(2,m,2):
+  print(x)
+_________________________________________________________________________
+
+9.) Write a code to get an integer N and print the values from N to 1.
+
+Input Description:
+A single line contains an integer N.
+
+Output Description:
+Print the values from N to 1 in a separate line.
+
+Sample Input :
+10
+Sample Output :
+10
+9
+8
+7
+6
+5
+4
+3
+2
+1
+______________________________
+
+a = 1
+n = int(input())
+while n >= a:
+  print(n)
+  n = n-1
+________________________________________________________________________
+
+10.) Write a program to get a list of integers as input and find the LCM of the values without using GCD
+
+Input Description:
+First line contains an integer N, number of values. Second line contains N space separated values.
+
+Output Description:
+Print the LCM of the values.
+
+Sample Input :
+1 2 3 4 5
+Sample Output :
+60
+____________________________________
+
+def LCM(arr, n):
+	max_num = 0;
+	for i in range(n):
+		if (max_num < arr[i]):
+			max_num = arr[i];
+	res = 1;
+	x = 2;
+	while (x <= max_num):
+		indexes = [];
+		for j in range(n):
+			if (arr[j] % x == 0):
+				indexes.append(j);
+		if (len(indexes) >= 2):
+			for j in range(len(indexes)):
+				arr[indexes[j]] = int(arr[indexes[j]] / x);
+			res = res * x;
+		else:
+			x += 1;
+	for i in range(n):
+		res = res * arr[i];
+	return res;
+aaa = input()
+arr = [int(i) for i in input().split(" ")];
+n = len(arr);
+print(LCM(arr, n));
+__________________________________________________________________
+
+11.) Write a code get an integer number as input and print the odd and even digits of the number separately.
+
+Input Description:
+A single line containing an integer.
+
+Output Description:
+Print the even and odd integers of the integer in a separate line.
+
+Sample Input :
+1234
+Sample Output :
+2 4
+1 3
+____________________________
+
+s=input()
+l=[int(i) for i in s]
+# print(l)
+even = []
+odd = []
+for j in l:
+  if j%2==0:
+    even.append(j)
+  else:
+    odd.append(j)
+print(" ".join(str(x) for x in sorted(even)))
+print(" ".join(str(x) for x in sorted(odd)))
+____________________________________________________________________
+
+12.) Write a code to get a integer n as input and calculate the smallest perfect power of 2 greater than n.
+
+Input Description:
+A single line containing an integer,n.
+
+Output Description:
+Print the smallest perfect power of 2 greater than n.
+
+Sample Input :
+48
+Sample Output :
+64
+_____________________________
+
+def perfectPowerOf2( n ):
+	per_pow = 1
+	while n > 0:
+		per_pow = per_pow << 1
+		n = n >> 1
+	return per_pow
+n = int(input())
+print(perfectPowerOf2(n))
+
+________________________________________________________________
+
+13.) Write a code to get an integer N and print the sum of  values from 1 to N.
+
+Input Description:
+A single line contains an integer N.
+
+Output Description:
+Print the sum of values from 1 to N.
+
+Sample Input :
+10
+Sample Output :
+55
+_________________________________
+
+n=int(input())
+print(sum(range(1,n+1)))
+_________________________________________________________________
+
+14.) Write a code to get an integer N and print values from 1 till N in a separate line.
+
+Input Description:
+A single line contains an integer N.
+
+Output Description:
+Print the values from 1 to N in a separate line.
+
+Sample Input :
+5
+Sample Output :
+1
+2
+3
+4
+5
+_____________________________________
+
+n=int(input())
+m = n+1
+for x in range(1,m):
+  print(x)
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
