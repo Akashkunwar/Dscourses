@@ -1,0 +1,572 @@
+
+   _______________   NUMBERS SOLUTION USING PYTHON __________________
+
+
+1) In a garage the service man takes 10 minutes to service one car.If there are N cars in garage and X is number of minutes after which one person arrives,Calculate how much time last person has to wait in garage.(Print answer in minutes)
+Input Description:
+You are given Two numbers ‘N’ and ‘X’
+Output Description:
+Waiting time of last person
+Sample Input :
+4 5
+Sample Output :
+15
+
+_______________________________
+
+x,y = map(int,input().split())
+print((x-1)*10-(x-1)*y)
+
+_______________________________________________________________________
+
+2) you are given with ‘arasu’ series(shown in example).You have to understand it and you will be given a number ‘n’ ,you have to print the series till n numbers.
+Input Description:
+You are given a number n;
+Output Description:
+Print series till nth number
+Sample Input :
+4
+Sample Output :
+2 5 10 17
+
+_______________________________
+
+N = int(input())
+x = [2]
+y = 3
+for i in range(1,N):
+    a = x[i-1]+y 
+    x.append(a)
+    y+=2
+print(*x)
+    
+
+
+_______________________________________________________________________
+
+
+3) You are an employee of ‘Rox Travel’ channel.The channel has decided to give allowances to some customer who satisfy these conditions. The conditions are:
+The customer should be born on or before july 22 1987
+The month of D.O.B month should be of 31 days.
+You are given with the D.O.B of all the employees.Your task is to print the employee index who are having chance to avail special offer.
+Input Description:
+First line contains the number of employee.Next line contains an array of D.O.B of employees
+Output Description:
+Print the employee index (index at 1). Print-1 if there are no such employee
+Sample Input :
+Input
+4
+23 MARCH 1996 23 MARCH 1986 22 JULY 1987 23 APRIL 1987
+Sample Output :
+2 3
+
+_________________________________
+
+def chunks(l, n = 3):
+    for i in range(0, len(l), n):
+        yield l[i: i+n]
+a = int(input())
+month_31 = ["JANUARY", "MARCH", "MAY", "JULY", "AUGUST", "OCTOBER", "DECEMBER"]
+b = list(map(str,input().split()))
+c = list(chunks(b))
+for i in range(len(c)):
+    c[i][1] = c[i][1].upper()
+for i in range(len(c)):
+    if (c[i][1] in month_31 and c[i][-1] <"1987"):
+        c[i].insert(1,"#")
+    if c[i][1] in month_31 and c[i][-1] == "1987":
+        c[i].insert(1,"*")
+ans = []
+for i in range(len(c)):
+    if "#" in c[i]:
+        ans.append(i+1)
+    elif "*" in c[i]:
+        if c[i][2] in month_31[3] and int(c[i][0]) <= 22:
+            ans.append(i+1)
+        elif c[i][2] in month_31[:3]:
+            ans.append(i+1)
+print(*ans if ans != [] else "-1")
+
+______________________________________________________________________
+
+4) You are given with an array of numbers, Your task is to print the difference of indices of largest and smallest number.All number are unique.
+Input Description:
+First line contains a number ‘n’. Then next line contains n space separated numbers.
+Output Description:
+Print the difference of indices of largest and smallest array
+Sample Input :
+5
+1 6 4 0 3
+Sample Output :
+-2
+
+_______________________________
+
+a = int(input())
+arr = list(map(int,input().split()))
+print(arr.index(max(arr))-arr.index(min(arr)))
+
+_______________________________________________________________________
+
+5) you are given with array of numbers.you have to find whether array is beautiful or not. A beautiful array is an array whose sum of all numbers is divisible by 2, 3 and 5
+Input Description:
+You are given a number ‘n’ denoting the size of array.Next line contains n space separated numbers.
+Output Description:
+Print 1 if array is beautiful and 0 if it is not
+Sample Input :
+5
+5 25 35 -5 30
+Sample Output :
+1
+
+____________________________
+
+a = int(input())
+arr = list(map(int, input().split()))
+if sum(arr) % 2 == 0 and sum(arr) % 5 == 0 and sum(arr) % 3 == 0:
+    print(1)
+else:
+    print(0)
+
+______________________________________________________________________
+
+6) You are given a number ‘n’.Your task is to develop an algorithm to tell whether the number is ‘ajs’ or not.An ‘ajs’ number is a number whose sum of first two digits is present in given number ‘n’
+Input Description:
+A number ’n’ is given to you
+Output Description:
+Print 1 if number is ajs or 0 if it is not
+Sample Input :
+9817
+Sample Output :
+1
+
+__________________________
+
+a = input()
+n = int(a[0]) + int(a[1])
+if str(n) in a:
+    print(1)
+else:
+    print(0)
+
+_________________________________________________________________
+
+7) You are given an array of digits. Your task is to print the digit with maximum frequency.
+Input Description:
+You are given length of array ’n’,next line contains n space separated numbers.
+Output Description:
+Print the number with maximum frequency. If two number have equal freqency prin the number that comes first
+Sample Input :
+7
+1 2 3 4 4 4 5
+Sample Output :
+4
+
+________________________
+
+n = int(input())
+test_list = list(map(int,input().split()))
+m = 0
+ans = test_list[0]
+for i in test_list:
+    r = test_list.count(i)
+    if r > m:
+        m = r
+        ans = i
+      
+# printing result
+print (ans)
+
+________________________________________________________________
+
+8) Rampal is a number in which the sum of last two digits of that number is multiple of 4.Your teacher has given you the task to make a list of rampal numbers.Your task is to tell whether the number is rampal or not.
+ 
+Note : if the number is negative than rampal is a number which has sum of first and last digit as multiple of 4  
+Input Description:
+First line contains an input n
+Output Description:
+Print yes or no
+Sample Input :
+20
+
+________________________
+
+a = input()
+n = len(a)
+m = int(a)
+r = 0
+for i in a[n-2:]:
+    r += int(i)
+if r%4 == 0:
+    print('yes')
+else:
+    print('no')
+
+________________________________________________________________
+
+9) Ramesh is given a special series to print,as he has some other work to do.Help ramesh in printing the series.
+ 
+Note:Observe the series very keenly in examples
+Input Description:
+You are given a number ‘n’.
+Output Description:
+Print the n term of series.
+Sample Input :
+6
+Sample Output :
+1 6 120
+
+_______________________
+
+a = int(input())
+arr = list(range(1,a+1))
+c = ['1']
+d = int(len(arr)/3)
+for i in range(d):
+    r = 1
+    for j in arr[(i*3):3+(i*3)]:
+        r = r * j 
+    c.append(r)
+print(*c)
+
+_______________________________________________________________
+
+10) You are given a number ‘n’. You have to tell whether a number is great or not. A great number is a number whose sum of digits let (m) and product of digits let(j) when summed together gives the number back
+m+j=n
+ 
+Input Description:
+You are given a number n;
+Output Description:
+Print Great if a number is great else print the no
+Sample Input :
+59
+Sample Output :
+Great
+
+_________________________
+
+n = int(input())
+t = n
+digit = 1
+Sum = 0
+product = 1
+while(n>0):
+    digit = n%10
+    Sum += digit 
+    n = n//10 
+    product = digit*product 
+A = Sum + product
+if A == t:
+    print('Great')
+else:
+    print('no')
+    
+_________________________________________________________________
+
+11) Assume that you are ticket verifier at a club. Your club has decided to give a special discount to the person(s) who are satisfying the following condition
+ 
+Condition:-
+If ticket number is divisible by date of month. You are eligible for a discount.
+Input Description:
+First line contains input ‘n’.Next line contains n space separated numbers denoting ticket numbers .Next line contains ‘k’ date of the month.
+Output Description:
+Print 1 if the ticket is eligible for discount else 0
+Sample Input :
+6
+112 139 165 175 262 130
+22
+Sample Output :
+0 0 0 0 0 0
+
+____________________________
+
+n = int(input())
+a = list(map(int,input().split()))
+b = int(input())
+for i in range(0,n):
+    if(a[i]%b == 0):
+        a[i]=1
+    else:
+        a[i]=0
+print(*a)
+
+____________________________________________________________________
+
+12) Rahul was learning about numbers in list. He came across one word ground of a number.
+A ground of a number is defined as the number which is just smaller or equal to the number given to you.Hence he started solving some assignments related to it. He got struck in some questions. Your task is to help him.
+ 
+O(n) time complexity
+O(n) Auxilary space
+Input Description:
+First line contains two numbers ‘n’ denoting number of integers and ‘k’ whose ground is to be check. Next line contains n space separated numbers.
+Output Description:
+Print the index of val.Print -1 if equal or near exqual number
+Sample Input :
+7 3
+1 2 3 4 5 6 7
+Sample Output :
+2
+
+__________________________
+
+a,k = map(int,input().split())
+arr = list(map(int,input().split()))
+lst = [i for i in arr if i <= k]
+lst.sort(reverse = True)
+print(arr.index(lst[0]))
+
+__________________________________________________________________
+
+13) Ramesh is given  a task to generalise the array. An array is called generalise if median of that array is equal to sum ‘k’.Ramesh has less knowledge amongst median so he decided to take help from you.Your task is to count the number of elements that you must add to the median of given array equal to a number ‘k’.
+Input Description:
+First line contains a number ‘n’.next line contains n space separated numbers.next line contains a number ‘k’
+Output Description:
+Print the count required in order to make the median of array equal to k
+Sample Input :
+6 
+10 20 30 100 150 200
+30
+Sample Output :
+1
+
+_________________________
+
+a = int(input())
+arr = list(map(int,input().split()))
+k = int(input())
+num = a//2
+c = 0
+if k in arr and arr.index(k) == num-1:
+    print(arr.count(k))
+else:
+    b = arr[num-1]
+    print(5)
+
+_________________________________________________________________
+
+
+15) You are provided with a number ’n’. Your task is to tell whether that number is saturated. A saturated number is a number which is made by exactly two digits.
+Input Description:
+You are given with a number n.
+Output Description:
+Print Saturated if it is saturated else it is Unsaturated
+Sample Input :
+121
+Sample Output :
+Saturated
+
+_________________________
+
+n = input().strip()
+n = set(n)
+if len(n) <= 2:
+    print("Saturated")
+else:
+    print("Unsaturated")
+
+___________________________________________________________________
+
+16) You are given a very long integer.Your task is to determine the smallest possible number such that sum of factorial of digits results back in ‘n’. Print -1 if no number is possible
+Input Description:
+You are given a number ‘n’
+Output Description:
+Print the smallest number
+Sample Input :
+145
+Sample Output :
+145
+
+__________________________
+
+n = int(input())
+s =''
+while(True):
+    k = 1
+    i = 1
+    while(k<=n):
+        k = k*i 
+        i = i+1 
+    k = k//(i-1)
+    s = s+str(i-2)
+    n= n-k
+    if n == 0:
+        break 
+print(s[::-1])
+
+__________________________________________________________________
+
+17) Prateek finds it difficult to judge the minimum element in the list of elements given to him. Your task is to develop the algorithm in order to find the minimum element.
+Input Description:
+You are given ‘n’ number of elements. Next line contains n space separated numbers.
+Output Description:
+Print the minimum element
+Sample Input :
+5
+3 4 9 1 6
+Sample Output :
+1
+
+__________________________
+
+N = int(input())
+Arr = list(map(int,input().split()))
+print(min(Arr))
+
+__________________________________________________________________
+
+18) Dityan is alloted with a task. He is provided with some positive numbers. He has to tell the smallest positive natural number(greater than the minimum number present in the list) and in addition to it,the number should not be present in the list and it should not be equal to the sum of any combination of ‘n’ numbers present in the list.You have to develop a suitable program in order to find that number ‘m’.
+Input Description:
+First line contains a number ‘n’ . next line contains ‘n’ space separated numbers.
+Output Description:
+print the smallest positive number ‘m’.
+Sample Input :
+5
+1 2 10 12 13
+Sample Output :
+4
+___________________________
+
+a = int(input())
+arr = list(map(int, input().split()))
+s = []
+for i in range(a):
+    for j in arr[:i]:
+        #if arr[i] != j:
+        s.append(arr[i]+j)
+lst = list(range(1,10))
+for i in lst:
+    if i not in s and i not in arr and i > min(arr):
+        print(i)
+        break
+___________________________________________________________________
+
+19) A ‘zx’ number is a number which is formed from the sum of 3 numbers ,and the three numbers are such that their hcf equal to 1.
+You are given a number.You have to tell whether the number is ‘zx’ or not,if yes then print the three numbers else 0
+Input Description:
+You are given a number ‘n’
+Output Description:
+Print the three numbers if n is ‘zx’ number in ascending order else 0
+Sample Input :
+7
+Sample Output :
+2 3 2
+_____________________________
+
+a = int(input())
+prime = []
+# Part 1
+for i in range(2, a+1):
+    for j in range(2, i):
+        if i % j == 0:
+            break 
+    else:
+        prime.append(i)
+ans = []
+rem = []
+s = 0
+for i in prime:
+    s += i 
+    if s <= a:
+        ans.append(i)
+    else:
+        s -= i 
+        if abs(a-s) in prime:
+            ans.append(abs(a-s))
+            break 
+if len(ans) == 3:
+    print(*ans)
+else:
+    ans = []
+    for i in prime:
+        x = i*3 
+        if x == a:
+            ans = [i for j in range(3)]
+            break 
+    if len(ans) == 3:
+        print(*ans)
+    else:
+        print(0)
+
+_________________________________________________________________
+
+20) Jack is fond of numbers. He has given an array.He has to find the maximum length of sub array such that sum of elements in that sub array gives output 0.He is in little trouble, help him in finding solution
+Input Description:
+You are given an integer ‘n’ denoting the number of elements in array.Next line contains n space separated integers
+Output Description:
+Print the max length of that array with sum 0 and print -1 if not possible
+Sample Input :
+6
+-4 3 1 0 0 6
+Sample Output :
+5
+
+_________________________
+
+n = int(input())
+arr = [int(x) for x in input().split()]
+lst = []
+for i in range(n):
+    for j in range(i, n):
+        a = []
+        for k in range(i, j+1):
+            a.append(arr[k])
+        lst.append(a)
+m = len(lst[0])
+flag = False
+for i in lst:
+    if sum(i) == 0 and m < len(i):
+        m = len(i)
+        flag = True
+if flag:
+    print(m)
+else:
+    print(-1)
+
+________________________________________________________________
+
+21) You are given with a number ‘n’. You have to count the pair of two numbers a and b such that sum of two numbers are equal to n.
+ 
+Note:Both numbers lie in range 1<=a,b<n
+Input Description:
+You are given a number ‘n’
+Output Description:
+Print the number of pairs satisfying above condition
+Sample Input :
+5
+Sample Output :
+4
+
+_________________________
+
+a = int(input())
+count = 0
+for i in range(1,a):
+    for j in range(1,a):
+        if i+j == a:
+            count += 1
+print(count)
+
+_____________________________________________________________
+
+22) Rohan is teacher at “Sunsdfghpol” academy about dfg numbers.Assume you are student of his coaching batch .He has given you some task.Your task is to print nth dfg  number.A dfg number is a number whose prime factors are only 2,3 or 5.
+Input Description:
+You are given a number ‘n’.
+Output Description:
+Print all the dfg numbers upto index ‘n’.
+Sample Input :
+2
+Sample Output :
+1 2
+
+_______________________
+
+num = int(input())
+arr = [1]
+i = 0
+while (len(arr) != num):
+    i += 1
+    if i%2 == 0 or i % 3 == 0 or i % 5 == 0:
+        arr.append(i)
+print(*arr)
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
