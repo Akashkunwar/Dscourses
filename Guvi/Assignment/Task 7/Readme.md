@@ -1,4 +1,4 @@
-##Assignment 10
+## Assignment 10
 You are provided with a dataset from USA Forensic Science Service
 which has description of 6 types of glass; defined in terms of their
 oxide content (i.e. Na, Fe, K, etc). Your task is to use K-Nearest
@@ -18,10 +18,10 @@ distance. The performance of the two models using different distance
 metrics should be compared in terms of accuracy to the test data and
 Scikit-Learn Classification Report.
                   
-##Assignment 11 DataPreprocessing,
-##Assignment 12 Logistic Regression,
-##Assignment 13 K-NN,
-##Assignment 14 SVM,
-##Assignment 15 Decision Trees,
-##Assignment 16 Random Forest
+## Assignment 11 DataPreprocessing,
+## Assignment 12 Logistic Regression,
+## Assignment 13 K-NN,
+## Assignment 14 SVM,
+## Assignment 15 Decision Trees,
+## Assignment 16 Random Forest
 Refer the same folder for the .ipynb files and datasets
