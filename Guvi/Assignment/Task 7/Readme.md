@@ -12,9 +12,8 @@ But the shared drive folder have the dataset for your convenience
 perform exploratory data analysis on the dataset using Python Pandas,
 including dropping irrelevant fields for predicted values, and
 standardization of each attribute.
-Following data cleaning, two Scikit-Learn KNN models should be created
-for two different distance metrics: Square Euclidean and Manhattan
-distance. The performance of the two models using different distance
+_Following data cleaning, two Scikit-Learn KNN models should be created for two different distance metrics: Square Euclidean and Manhattan distance. 
+The performance of the two models using different distance
 metrics should be compared in terms of accuracy to the test data and
 Scikit-Learn Classification Report.
                   
