@@ -7,9 +7,9 @@ Repository containing comparisons between different machine learning algorithms 
 * [The Data](https://github.com/Akashkunwar/Dscourses/tree/main/Guvi/Project/Chennai%20House%20Price%20Prediction#the-data)
 * [Data Cleaning](https://github.com/Akashkunwar/Dscourses/tree/main/Guvi/Project/Chennai%20House%20Price%20Prediction#the-cleaning)
 * [EDA (Exploratory data analysis)](https://github.com/Akashkunwar/Dscourses/tree/main/Guvi/Project/Chennai%20House%20Price%20Prediction#the-concept#EDA-(Exploratory-data-analysis))
-* [Encoding](https://github.com/Akashkunwar/Dscourses/tree/main/Guvi/Project/Chennai%20House%20Price%20Prediction#the-concept#Encoding)
+* [Encoding](https://github.com/Akashkunwar/Dscourses/tree/main/Guvi/Project/Chennai%20House%20Price%20Prediction#Encoding)
 * [Scaling](https://github.com/Akashkunwar/Dscourses/tree/main/Guvi/Project/Chennai%20House%20Price%20Prediction#Scaling)
-* [ML Model Deployment](https://github.com/Akashkunwar/Dscourses/tree/main/Guvi/Project/Chennai%20House%20Price%20Prediction#the-concept#ML-Model-Deployment)
+* [ML Model Deployment](https://github.com/Akashkunwar/Dscourses/tree/main/Guvi/Project/Chennai%20House%20Price%20Prediction#ML-Model-Deployment)
 
 
 ## The Concept
@@ -60,7 +60,7 @@ Here we are plotting all our Numerical columns with total price of the house to 
 
 
 ![Comparison Between Models in the Fashion MNIST dataset](https://i.imgur.com/gTq6DQE.png)
-------------
+
 
 ## Encoding
 
