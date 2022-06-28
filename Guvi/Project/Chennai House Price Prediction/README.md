@@ -6,7 +6,7 @@ Repository containing comparisons between different machine learning algorithms 
 * [The Concept](https://github.com/Akashkunwar/Dscourses/tree/main/Guvi/Project/Chennai%20House%20Price%20Prediction#the-concept)
 * [The Data](https://github.com/Akashkunwar/Dscourses/tree/main/Guvi/Project/Chennai%20House%20Price%20Prediction#the-data)
 * [Data Cleaning](https://github.com/Akashkunwar/Dscourses/tree/main/Guvi/Project/Chennai%20House%20Price%20Prediction#the-cleaning)
-* [EDA (Exploratory data analysis)](https://github.com/Akashkunwar/Dscourses/tree/main/Guvi/Project/Chennai%20House%20Price%20Prediction#the-concept#EDA-(Exploratory-data-analysis))
+* [EDA (Exploratory data analysis)](https://github.com/Akashkunwar/Dscourses/tree/main/Guvi/Project/Chennai%20House%20Price%20Prediction#EDA-(Exploratory-data-analysis))
 * [Encoding](https://github.com/Akashkunwar/Dscourses/tree/main/Guvi/Project/Chennai%20House%20Price%20Prediction#Encoding)
 * [Scaling](https://github.com/Akashkunwar/Dscourses/tree/main/Guvi/Project/Chennai%20House%20Price%20Prediction#Scaling)
 * [ML Model Deployment](https://github.com/Akashkunwar/Dscourses/tree/main/Guvi/Project/Chennai%20House%20Price%20Prediction#ML-Model-Deployment)
