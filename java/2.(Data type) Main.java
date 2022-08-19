@@ -1,4 +1,4 @@
-// rename file by removing number
+// Rename file by Main.java
 //Data type
 public class Main {
    public static void main(String[] args) { 
