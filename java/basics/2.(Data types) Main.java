@@ -1,5 +1,5 @@
 // Rename file by Main.java
-//Data type
+//Data types
 public class Main {
    public static void main(String[] args) { 
       /// Primitive data types
