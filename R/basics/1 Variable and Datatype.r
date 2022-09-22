@@ -43,5 +43,6 @@ ls()
 # Removing variable
 rm(temp)
 
+# show list
 ls()
 # "a" "b" "c" "d" "e"
