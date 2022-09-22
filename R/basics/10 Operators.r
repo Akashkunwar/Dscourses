@@ -37,7 +37,7 @@ a >= b
 # Equal to
 a == b
 
-# Not equal to
+# Not equal
 a != b
 
 # If one of the condition is true 
