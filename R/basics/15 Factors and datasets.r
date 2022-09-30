@@ -47,7 +47,7 @@ a <- as.ordered(a) # To order factor
 is.ordered(a)
 # TRUE
 
-# Predifined Datasets in R
+# Some Predifined Datasets in R
 data()
 View(cars)
 class(cars)
