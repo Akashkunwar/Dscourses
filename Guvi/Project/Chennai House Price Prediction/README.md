@@ -14,7 +14,7 @@ Repository containing comparisons between different machine learning algorithms 
 
 ## The Concept
 
-Hwew i try different classic algorithms in a dataset to experiment and see how each one behaves.
+Here I try different classic algorithms in a dataset to experiment and see how each one behaves.
 
 It's an attempt to answer some questions:
 
