@@ -65,3 +65,83 @@ delete from employees where emp_id=106;
 -- For multiple detail at a time
 delete from employees where emp_id in (104,105);
 
+
+-- DCL (Data Control Language)
+-- It is used for security purpuses and to give access or revoke access to fetch data as per client
+
+-- Give access to user
+
+GRANT <'privilage list name of column'> on <'Relation name name of column'> to <'USER'>
+
+-- Revoke access to user
+
+revoke <'privilage list name of column'> on <'Relation name name of column'> to <'USER'>
+
+
+-- TCL (Transaction Control Language)
+-- It normaly used to handle data related to transaction which can commit, revoke or savepoints of the transaction
+
+
+-- SQL Operators 
+-- Filter
+
+-- WHERE Clause (Get result by filtering data)
+SELECT * from employees WHERE emp_id=101; -- By employee ID
+SELECT * from employees WHERE salary>30000; -- By Salary greater than
+
+-- Logical Operator (AND, OR and NOT)
+
+-- AND (Both statement should be true)
+SELECT * from employees WHERE first_name='Akash' AND last_name='kumar';
+
+-- OR (One statement should be true)
+SELECT * from employees WHERE first_name='Akash' OR last_name='kumar';
+
+-- NOT (!=)(None of statement should be true)
+SELECT * from employees WHERE first_name!='Akash' AND last_name='kumar';
+
+
+-- Comparision Operators (>,<,>=,<=,<> or !=)
+
+SELECT * from employees WHERE salary<=40000; -- Less than equal to
+
+SELECT * from employees WHERE last_name='kumar' AND salary<40000; -- Equal to with less than operator among AND operator
+
+SELECT * from employees WHERE salary<=40000 and last_name != 'kumar'; -- Use of less than equal to, AND and not equal to comparision operator together
+
+
+-- Special Operator (BETWEEN, LIKE, IS NULL, IN and DISTINCT)
+
+SELECT * from employees WHERE salary between 30000 and 40000; -- Between
+
+SELECT * from employees WHERE salary IS NULL; -- All null value in salary
+
+SELECT * from employees WHERE salary IN (20000,30000,40000); -- Salary with these values
+
+SELECT DISTINCT first_name FROM employee; -- ALl unique first_name
+
+SELECT * from employees WHERE first_name like 'A%'; -- Match first name start with A
+
+
+-- Aggregate function (Avg(), Count(), Max(), Min() and Sum())
+
+SELECT Avg(salary) FROM employees; -- Average of salary
+SELECT Count(*) FROM employees; -- Total no. of count from record
+SELECT Max(salary) FROM employees; -- Maximum value of salary
+SELECT Min(salary) FROM employees; -- Minimum value of salary
+SELECT Sum(salary) FROM employees; -- Sum of all the salary
+
+
+-- Adding department column to perform groupby operations in that
+ALTER TABLE employees add column dep varchar(20);
+-- Adding values in that
+UPDATE employees set dep='sales' WHERE id=101;
+UPDATE employees set dep='sales' WHERE emp_id=101;
+UPDATE employees set dep='tech' WHERE emp_id=102;
+UPDATE employees set dep='support' WHERE emp_id=103;
+UPDATE employees set dep='sales' WHERE emp_id=104;
+UPDATE employees set dep='marketing' WHERE emp_id=105;
+
+
+-- Group by clause
+SELECT first_name, max(salary), dep from employees GROUP BY dep;
