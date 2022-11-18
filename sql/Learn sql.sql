@@ -145,3 +145,15 @@ UPDATE employees set dep='marketing' WHERE emp_id=105;
 
 -- Group by clause
 SELECT first_name, max(salary), dep from employees GROUP BY dep;
+
+-- Having clause
+-- To use aggrigate function with group by clause we use having clause
+SELECT Avg(salary), dep FROM employees GROUP BY dep HAVING count(dep)>=2; -- Avg. salary of employee where min 2 people are in that department
+SELECT first_name, Max(salary), dep FROM employees GROUP BY dep HAVING count(dep)>=2;  -- Max salary of employee where min 2 people are in that department
+SELECT first_name, Avg(salary), dep FROM employees GROUP BY dep HAVING count(dep)>=1;  -- Avg. salary of employy where min 1 people are in that department
+
+-- Order by clause
+SELECT * from employees ORDER BY salary DESC; -- Ordering a table of a database
+
+
+-- UNION Funcion
