@@ -155,5 +155,44 @@ SELECT first_name, Avg(salary), dep FROM employees GROUP BY dep HAVING count(dep
 -- Order by clause
 SELECT * from employees ORDER BY salary DESC; -- Ordering a table of a database
 
+-- First creating 2 table
+CREATE TABLE product1(
+category_id int,
+product_name VARCHAR(20)
+);
+
+CREATE TABLE product2(
+category_id int,
+product_name VARCHAR(20)
+);
+
+
+-- Inserting values
+INSERT INTO product1 VALUES(1,'nokia');
+INSERT INTO product1 VALUES(2,'samsung');
+INSERT INTO product1 VALUES(3,'hp');
+INSERT INTO product1 VALUES(6,'nikon');
+
+INSERT INTO product2 VALUES(1,'samsung');
+INSERT INTO product2 VALUES(2,'lg');
+INSERT INTO product2 VALUES(3,'hp');
+INSERT INTO product2 VALUES(5,'dell');
+INSERT INTO product2 VALUES(6,'apple');
+INSERT INTO product2 VALUES(10,'playstation');
+
 
 -- UNION Funcion
+SELECT product_name FROM product1 
+UNION 
+SELECT product_name from product2;
+
+-- UNION ALL Function (It provide duplicate value whether union remove duplicate values)
+SELECT product_name FROM product1 
+UNION ALL
+SELECT product_name from product2;
+
+-- INRTERSECT functuon (Provide common element between two element)
+SELECT product_name FROM product1 
+INTERSECT
+SELECT product_name from product2;
+
