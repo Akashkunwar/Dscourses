@@ -196,3 +196,97 @@ SELECT product_name FROM product1
 INTERSECT
 SELECT product_name from product2;
 
+
+-- SQL joins (Inner, Left, Right, Full outer, Self, Cartesian Join)
+
+-- Creating department table to perform join operation on that
+CREATE TABLE department(
+dep_id int,
+dep VARCHAR(20),
+dep_loc VARCHAR(20),
+);
+-- Inserting values (sales is sale to see left and right join effect)
+INSERT INTO department VALUES(1,'sale','banglore');
+INSERT INTO department VALUES(2,'tech','banglore');
+INSERT INTO department VALUES(3,'support','chennai');
+INSERT INTO department VALUES(4,'marketing','pune');
+INSERT INTO department VALUES(5,'hr','kochin');
+INSERT INTO department VALUES(7,'content','delhi');
+
+-- INNER JOIN - Returns rows when there is a match in both tables.
+SELECT e.first_name, e.salary, d.dep, d.dep_loc
+from employees e
+INNER JOIN department d
+on e.dep = d.dep;
+
+--LEFT JOIN - Returns all rows from the left table, even if there are no matches in the right table.
+SELECT e.first_name, e.salary,e.dep, d.dep, d.dep_loc
+from employees e
+LEFT JOIN department d
+on e.dep = d.dep;
+
+-- RIGHT JOIN - Returns all rows from the right table, even if there are no matches in the left table.
+SELECT e.first_name, e.salary,e.dep, d.dep, d.dep_loc
+from employees e
+RIGHT JOIN department d
+on e.dep = d.dep;
+
+-- FULL OUTER JOIN - Returns rows when there is a match in one of the tables.
+SELECT e.first_name, e.salary,e.dep, d.dep, d.dep_loc
+from employees e
+LEFT JOIN department d
+on e.dep = d.dep;
+UNION
+SELECT e.first_name, e.salary,e.dep, d.dep, d.dep_loc
+from employees e
+RIGHT JOIN department d
+on e.dep = d.dep;
+
+-- SELF JOIN - Used to join a table to itself as if the table were two tables, temporarily renaming at least one table in the SQL statement.
+
+-- CARTESIAN JOIN (CROSS JOIN) - Returns the Cartesian product of the sets of records from the two or more joined tables. 3,4 = 12
+SELECT * from employees CROSS JOIN department;
+
+
+-- After importing cricket data we check all the learnings
+-- # Datasets
+-- -- cricket_1 for test match 1
+-- -- cricket_2 for test match 1
+
+-- QI. Find all player present in test match 1 and test match 2
+
+SELECT * from cricket_1
+union
+select * from cricket_2;
+
+
+-- Q2. Write a MySQ1 query to find the players from the test match 1 having Charisma higher than the average Charisma.
+
+SELECT player_name, Charisma FROM cricket_1 WHERE Charisma > (SELECT AVG(Charisma) from cricket_1);
+
+
+-- Q3. Find player_id and player name that are common in the test match 1 and test match 2.
+
+SELECT Player_ID, Player_name from cricket_1 WHERE cricket_1.Player_ID in (SELECT Player_ID from cricket_2);
+
+
+-- Q4. Retrieve player_id, runs, and player_name from cricket_l table and display list of the players where the runs are more than the average runs.
+
+SELECT player_id, runs, player_name FROM cricket_1 WHERE runs > (SELECT AVG(runs) FROM cricket_1);
+
+
+-- Q5. Write a query to extract the player_id, runs and player_name from the table "cricket _1" where the runs are greater than 50.
+
+SELECT player_id, runs, player_name FROM cricket_1 WHERE runs > 50;
+
+
+-- Q6. Write a query to extract all the columns from cricket_l where player_name starts with 'y' and ends with 'v'
+
+SELECT * FROM cricket_1 WHERE player_name LIKE 'y%v';
+
+
+-- Write a query to extract all the columns from cricket_l where player_name does not end with 't' .
+
+SELECT * FROM cricket_1 WHERE player_name NOT LIKE '%t';
+
+
