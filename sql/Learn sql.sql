@@ -288,5 +288,3 @@ SELECT * FROM cricket_1 WHERE player_name LIKE 'y%v';
 -- Write a query to extract all the columns from cricket_l where player_name does not end with 't' .
 
 SELECT * FROM cricket_1 WHERE player_name NOT LIKE '%t';
-
-
