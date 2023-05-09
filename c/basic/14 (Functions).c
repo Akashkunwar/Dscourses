@@ -1,4 +1,5 @@
 // Write functions in C 
+// 1.) Function to create a vrick of #
 #include <stdio.h>
 
 int get_size(void);
@@ -35,5 +36,27 @@ void print_grid(int size)
         }
         printf("\n");
     }
+}
+
+
+// 2.) Function to get only negetive value as input
+#include <stdio.h>
+int get_negetive(void);
+int main(void)
+{
+    int i = get_negetive();
+    printf("%i\n",i);
+}
+
+int get_negetive(void)
+{
+    int n;
+    do
+    {
+        printf("Negetive integer : ");
+        scanf("%d",&n);
+    }
+    while (n>0);
+    return n;
 }
 
